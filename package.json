@@ -3,19 +3,18 @@
     "version": "1.0.0",
     "type": "module",
     "scripts": {
-      "start": "vite",
-      "serve": "http-server -p 3000 ./dist/",
-      "build": "vite build",
-      "prod": "npm-run-all build serve"
+        "start": "vite",
+        "serve": "http-server -p 3000 ./dist/",
+        "build": "vite build",
+        "prod": "npm-run-all build serve"
     },
     "dependencies": {
-      "bootstrap": "5.3.2",
-      "@fortawesome/fontawesome-free": "6.4.2"
+        "@fortawesome/fontawesome-free": "6.4.2",
+        "bootstrap": "5.3.2"
     },
     "devDependencies": {
-      "http-server": "14.1.1",
-      "vite": "4.4.9",
-      "npm-run-all": "4.1.5"
+        "http-server": "14.1.1",
+        "npm-run-all": "4.1.5",
+        "vite": "^4.4.9"
     }
-  }
-  
+}
