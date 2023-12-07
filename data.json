@@ -1,0 +1,133 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "genre": "Фантастика"
+    },
+    {
+      "id": 2,
+      "genre": "Фэнтези"
+    },
+    {
+      "id": 3,
+      "genre": "Романтика"
+    },
+    {
+      "id": 4,
+      "genre": "Экшн"
+    },
+    {
+      "id": 5,
+      "genre": "Драма"
+    },
+    {
+      "id": 6,
+      "genre": "Боевик"
+    },
+    {
+      "id": 7,
+      "genre": "Научная фантастика"
+    }
+  ],
+  "lines": [
+    {
+      "itemsId": 1,
+      "name": "Звездные войны",
+      "rating": "9",
+      "release_date": "1977-05-25",
+      "director": "Джордж Лукас",
+      "image": "",
+      "id": 1
+    },
+    {
+      "itemsId": 2,
+      "name": "Властелин колец",
+      "rating": "8",
+      "release_date": "2001-12-10",
+      "director": "Питер Джексон",
+      "image": "",
+      "id": 2
+    },
+    {
+      "itemsId": 7,
+      "name": "Титаник",
+      "rating": "7",
+      "release_date": "1997-11-18",
+      "director": "Джеймс Кэмерон",
+      "image": {},
+      "id": 3
+    },
+    {
+      "itemsId": 4,
+      "name": "Матрица",
+      "rating": "8",
+      "release_date": "1999-03-24",
+      "director": "Лана и Лилли Вачовски",
+      "image": "",
+      "id": 4
+    },
+    {
+      "itemsId": 1,
+      "name": "Гарри Поттер",
+      "rating": "8",
+      "release_date": "2001-11-04",
+      "director": "Крис Коламбус",
+      "image": "",
+      "id": 5
+    },
+    {
+      "itemsId": 5,
+      "name": "Форрест Гамп",
+      "rating": "8",
+      "release_date": "1994-06-23",
+      "director": "Роберт Земекис",
+      "image": "",
+      "id": 6
+    },
+    {
+      "itemsId": 7,
+      "name": "Темный рыцарь",
+      "rating": "9",
+      "release_date": "2008-07-18",
+      "director": "Кристофер Нолан",
+      "image": "",
+      "id": 7
+    },
+    {
+      "itemsId": 1,
+      "name": "Интерстеллар",
+      "rating": "8",
+      "release_date": "2014-10-26",
+      "director": "Кристофер Нолан",
+      "image": "",
+      "id": 8
+    },
+    {
+      "itemsId": 4,
+      "name": "Побег из Шоушенка",
+      "rating": "9",
+      "release_date": "1994-09-10",
+      "director": "Фрэнк Дарабонт",
+      "image": "",
+      "id": 9
+    },
+    {
+      "itemsId": 1,
+      "name": "Аватар",
+      "rating": "7",
+      "release_date": "2009-12-18",
+      "director": "Джеймс Кэмерон",
+      "image": "",
+      "id": 10
+    },
+    {
+      "itemsId": 2,
+      "name": "zxc",
+      "rating": "5",
+      "release_date": "2023-12-08",
+      "director": "тап",
+      "image": {},
+      "id": 12
+    }
+  ]
+}

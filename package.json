@@ -1,21 +1,26 @@
 {
-    "name": "int-prog",
-    "version": "1.0.0",
-    "type": "module",
-    "scripts": {
-      "start": "vite",
-      "serve": "http-server -p 3000 ./dist/",
-      "build": "vite build",
-      "prod": "npm-run-all build serve"
-    },
-    "dependencies": {
-      "bootstrap": "5.3.2",
-      "@fortawesome/fontawesome-free": "6.4.2"
-    },
-    "devDependencies": {
-      "http-server": "14.1.1",
-      "vite": "4.4.9",
-      "npm-run-all": "4.1.5"
-    }
+  "name": "int-prog",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "vite",
+    "serve": "http-server -p 3000 ./dist/",
+    "build": "vite build",
+    "rest": "json-server --watch data.json -p 8081",
+    "dev": "npm-run-all --parallel rest start",
+    "prod": "npm-run-all build --parallel serve rest"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "6.4.2",
+    "bootstrap": "^5.3.2"
+  },
+  "devDependencies": {
+    "eslint": "8.50.0",
+    "eslint-config-airbnb-base": "15.0.0",
+    "eslint-plugin-import": "2.28.1",
+    "http-server": "14.1.1",
+    "json-server": "0.17.4",
+    "npm-run-all": "4.1.5",
+    "vite": "4.4.9"
   }
-  
+}

@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <title>Просмотр фильмов</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    
     <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="node_modules/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body class="h-100 d-flex flex-column">
@@ -34,11 +34,17 @@
                             <a href="page3.html" class="nav-link">Категории</a>
                             <a href="page4.html" class="nav-link">Информация</a>
                             <a href="page5.html" class="nav-link">Популярное</a>
+                            
                         </div>
                     </div>
                 </div>
             </div>
         </nav>
+    </div>
+    <div id="banner">
+        <img class="banner-hide" src="Images/1.jpg" alt="banner1">
+        <img class="banner-hide" src="Images/2.jpg" alt="banner1">
+        <img class="banner-hide" src="Images/3.jpg" alt="banner1">
     </div>
 
     <div class="movie-container">
@@ -248,12 +254,22 @@
     <footer class="footer mt-auto d-flex justify-content-center align-items-center">
         <div class="container-fluid">
             <p>© 2023 Просмотр фильмов.</p>
+            <a href="admin.html" class="nav-link">Admin</a>
         </div>
     </footer>
 
 
+    <script type="module">
+        import myBanner from "./js/banner";
 
-    <script src="script.js"></script>
+        document.addEventListener('DOMContentLoaded', () => {
+            myBanner("#banner");
+        });
+    </script>
+    <script src="js/script.js"></script>
+    <script src="js/film.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
 
 
     </body>

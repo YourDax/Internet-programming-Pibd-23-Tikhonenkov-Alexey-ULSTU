@@ -10,6 +10,8 @@ export default defineConfig({
                 page3: resolve(__dirname, 'page3.html'),
                 page4: resolve(__dirname, 'page4.html'),
                 page5: resolve(__dirname, 'page5.html'),
+                admin: resolve(__dirname, 'admin.html'),
+                editpage: resolve(__dirname, 'editpage.html')
             },
         },
     },
