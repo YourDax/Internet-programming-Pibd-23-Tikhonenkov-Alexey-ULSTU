@@ -82,5 +82,6 @@ export async function deleteLine(id) {
     if (!response.ok) {
         throw response.statusText;
     }
+    window.location.reload(true);
     return response.json();
 }
