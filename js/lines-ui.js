@@ -8,10 +8,11 @@ export const cntrls = {
     rating: document.getElementById("rating"),
     releaseDate: document.getElementById("releaseDate"),
     director: document.getElementById("director"),
-    image: document.getElementById("coverImage"),
+    image: document.getElementById("image"),
+    imagePreview: document.getElementById("image-preview"),
 };
 
-export const imagePlaceholder = "https://via.placeholder.com/200";
+export const imagePlaceholder = "https://via.placeholder.com/300x400";
 
 export function createItemsOption(name, value = "", isSelected = false) {
     const option = document.createElement("option");

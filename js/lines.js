@@ -59,11 +59,55 @@ async function editLine(id,item,name, rating, release_date, director,image) {
     console.info(data);
     drawLinesTable();
 }
+async function readFile(file) {
+    const reader = new FileReader();
+
+    // создание Promise-объекта для использования функции
+    // с помощью await (асинхронно) без коллбэков (callback)
+    // https://learn.javascript.ru/promise
+    return new Promise((resolve, reject) => {
+        // 2. "Возвращаем" содержимое когда файл прочитан
+        // через вызов resolve
+        // Если не использовать Promise, то всю работу по взаимодействию
+        // с REST API пришлось бы делать в обработчике (callback) функции
+        // onloadend
+        reader.onloadend = () => {
+            const fileContent = reader.result;
+            // Здесь могла бы быть работа с REST API
+            // Чтение заканчивает выполняться здесь
+            resolve(fileContent);
+        };
+        // 3. Возвращаем ошибку
+        reader.onerror = () => {
+            // Или здесь в случае ошибки
+            reject(new Error("oops, something went wrong with the file reader."));
+        };
+        // Шаг 1. Сначала читаем файл
+        // Чтение начинает выполняться здесь
+        reader.readAsDataURL(file);
+    });
+}
+
+// функция для обновления блока с превью выбранного изображения
+async function updateImagePreview() {
+    // получение выбранного файла
+    // возможен выбор нескольких файлов, поэтому необходимо получить только первый
+    const file = cntrls.image.files[0];
+    // чтение содержимого файла в виде base64 строки
+    const fileContent = await readFile(file);
+    console.info("base64 ", fileContent);
+    // обновление атрибута src для тега img с id image-preview
+    cntrls.imagePreview.src = fileContent;
+}
 
 export function linesForm() {
     console.info("linesForm");
     drawItemsSelect();
     drawLinesTable();
+    // Вызов функции обновления превью изображения при возникновении
+    // события oncahnge в тэге input с id image
+    cntrls.image.addEventListener("change", () => updateImagePreview());
+
     cntrls.form.addEventListener("submit", async (event) => {
         console.info("Form onSubmit");
         event.preventDefault();
@@ -71,6 +115,7 @@ export function linesForm() {
         if (!cntrls.form.checkValidity()) {
             return;
         }
+        let imageBase64 = "";
         if (cntrls.imagePreview.src !== imagePlaceholder) {
             const result = await fetch(cntrls.imagePreview.src);
             const blob = await result.blob();
@@ -95,15 +140,18 @@ export function linesForm() {
                 cntrls.rating.value,
                 cntrls.releaseDate.value,
                 cntrls.director.value,
+                imageBase64,
             );
         }
     });
 }
 
+
 export async function linesPageForm() {
     console.info("linesPageForm");
     drawItemsSelect();
     const goBack = () => location.assign("/admin.html");
+    cntrls.image.addEventListener("change", () => updateImagePreview());
     const urlParams = new URLSearchParams(location.search);
     const currentId = urlParams.get("id");
     if (currentId) {
@@ -114,6 +162,7 @@ export async function linesPageForm() {
             cntrls.rating.value = line.rating;
             cntrls.releaseDate.value = line.release_date;
             cntrls.director.value = line.director;
+            cntrls.imagePreview.src = line.image ? line.image : imagePlaceholder;
         } catch {
             goBack();
         }
@@ -126,6 +175,19 @@ export async function linesPageForm() {
         if (!cntrls.form.checkValidity()) {
             return;
         }
+        let imageBase64 = "";
+        if (cntrls.imagePreview.src !== imagePlaceholder) {
+            // Загрузка содержимого атрибута src тэга img с id image-preview
+            // Здесь выполняется HTTP запрос с типом GET
+            const result = await fetch(cntrls.imagePreview.src);
+            // Получение из HTTP-ответа бинарного содержимого
+            const blob = await result.blob();
+            // Получение base64 строки для файла
+            // Здесь выполняется Promise из функции readFile
+            // Promise позволяет писать линейный код для работы с асинхронными методами
+            // без использования обработчиков (callback) с помощью await
+            imageBase64 = await readFile(blob);
+        }
         if (!currentId) {
             await addLine(
                 cntrls.itemsType.value,
@@ -133,7 +195,7 @@ export async function linesPageForm() {
                 cntrls.rating.value,
                 cntrls.releaseDate.value,
                 cntrls.director.value,
-                cntrls.image,
+                imageBase64,
             );
         } else {
             await editLine(
@@ -143,7 +205,7 @@ export async function linesPageForm() {
                 cntrls.rating.value,
                 cntrls.releaseDate.value,
                 cntrls.director.value,
-                cntrls.image,
+                imageBase64,
             );
         }
         goBack();
