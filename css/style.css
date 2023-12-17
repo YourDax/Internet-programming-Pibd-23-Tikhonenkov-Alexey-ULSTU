@@ -51,16 +51,22 @@ body {
 
 .movie-container {
     width: 80%;
+    
     margin: 0 auto;
     overflow-x: auto;
     white-space: nowrap;
+    gap: 20px;
+    
 }
 
 .movie-card {
-    
-    display: inline-block;
     width: 300px;
+    height: 600px;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
     margin: 0 auto;
+    margin-right: 20px;
     border-radius: 5px;
     background-color: #ffffff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
