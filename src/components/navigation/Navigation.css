@@ -1,0 +1,37 @@
+/* Navigation.css */
+
+.header {
+    background-color: #343a40; /* Цвет фона шапки */
+    color: white; /* Цвет текста */
+  }
+  
+  .header-logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .header-logo img {
+    width: 30px; /* Задайте желаемую ширину для иконки */
+    margin-right: 10px; /* Расстояние между иконкой и текстом */
+  }
+  
+  .header-logo h2 {
+    margin: 0; /* Убираем отступы у заголовка */
+  }
+  
+  /* Размещаем иконку и заголовок слева */
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Размещаем ссылки справа */
+  .ml-auto {
+    margin-left: auto;
+  }
+  
+  /* Убираем отступы у ссылок */
+  .nav-link {
+    margin: 0;
+  }
+  

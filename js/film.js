@@ -56,11 +56,11 @@ function addMoviesByGenre(moviesData, itemTypes) {
 }
 
 function addMovieCardsByContainer(container,movie) {
-    var container = container
+    
 
     if (!container) {
         console.error("Movie container not found");
-        return;""
+        return;
     }
 
     

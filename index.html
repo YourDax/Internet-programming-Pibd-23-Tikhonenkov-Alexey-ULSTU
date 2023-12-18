@@ -1,88 +1,15 @@
-<!DOCTYPE html>
-<html lang="ru" class="h-100">
+<html lang="ru">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Просмотр фильмов</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="node_modules/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="./css/style.css">
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Фильмы онлайн</title>
 </head>
 
-<body class="h-100 d-flex flex-column">
+<body>
+  <div id="root" class="h-100 d-flex flex-column"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
 
-    <div class="header">
-        <nav class="navbar navbar-expand-md navbar-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="/">
-                    <div class="header-logo">
-                        <img src="icon.png" alt="Logo">
-                        <h2>Фильмы онлайн</h2>
-                    </div>
-                </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                    </button>
-
-                    <div class="navbar-collapse collapse justify-content-end" id="navbarNav">
-                        <div class="navbar-nav">
-                            <a class="nav-link" href="index.html">Главная страница</a>
-                            <a href="page2.html" class="nav-link">Каталог</a>
-                            <a href="page3.html" class="nav-link">Категории</a>
-                            <a href="page4.html" class="nav-link">Информация</a>
-                            <a href="page5.html" class="nav-link">Популярное</a>
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </div>
-    <div id="banner">
-        <img class="banner-hide" src="Images/1.jpg" alt="banner1">
-        <img class="banner-hide" src="Images/2.jpg" alt="banner1">
-        <img class="banner-hide" src="Images/3.jpg" alt="banner1">
-    </div>
-
-    <div class="movie-container">
-        <h1>Наиболее Популярное</h1>
-        
-        <!-- Добавьте больше фильмов по вашему желанию -->
-    </div>
-
-    <div class="movie-container">
-        <h1>Может быть интересно</h1>
-        
-        <!-- Добавьте больше фильмов по вашему желанию -->
-    </div>
-    <div class="movie-container">
-        <h1>Лучшие отзывы</h1>
-        
-        <!-- Добавьте больше фильмов по вашему желанию -->
-    </div>
-    <footer class="footer mt-auto d-flex justify-content-center align-items-center">
-        <div class="container-fluid">
-            <p>© 2023 Просмотр фильмов.</p>
-            <a href="admin.html" class="nav-link">Admin</a>
-        </div>
-    </footer>
-
-
-    <script type="module">
-        import myBanner from "./js/banner";
-        import "./js/film.js";
-        document.addEventListener('DOMContentLoaded', () => {
-            myBanner("#banner");
-        });
-    </script>
-    
-    
-    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-
-
-
-    </body>
 </html>
