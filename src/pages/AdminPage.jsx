@@ -13,15 +13,17 @@ const AdminPage = () => {
             <h2 className="text-Gray text-center font-weight-bold">Таблица данных</h2>
             <Table className="mt-2" striped>
                 
-            <thead>
-                    <th scope="col">№</th>
-                    <th scope="col" className="w-25">Фильм</th>
-                    <th scope="col" className="w-25">Жанр</th>
-                    <th scope="col" className="w-15">Рейтинг</th>
-                    <th scope="col" className="w-25">Дата производства</th>
-                    <th scope="col" className="w-25">Режиссер</th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
+                <thead>
+                    <tr>
+                        <th scope="col">№</th>
+                        <th scope="col" className="w-25">Фильм</th>
+                        <th scope="col" className="w-25">Жанр</th>
+                        <th scope="col" className="w-15">Рейтинг</th>
+                        <th scope="col" className="w-25">Дата производства</th>
+                        <th scope="col" className="w-25">Режиссер</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                    </tr>
                 </thead>
                 <tbody></tbody>
             </Table>

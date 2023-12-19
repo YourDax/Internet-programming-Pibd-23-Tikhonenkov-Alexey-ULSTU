@@ -22,28 +22,28 @@ const PageEdit = () => {
                     alt="placeholder" />
             </div>
             <Form id="items-form" noValidate validated={validated} onSubmit={handleSubmit}>
-                <Form.Group className="mb-3" controlId="item">
+                <Form.Group className="mb-3" htmlFor="item">
                     <Form.Label htmlFor="item" className="form-label">Жанр</Form.Label>
                     <Form.Select name='selected' required>
                     </Form.Select>
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="name">
+                <Form.Group className="mb-3" htmlFor="name">
                     <Form.Label>Название фильма</Form.Label>
                     <Form.Control type="text" name="name" required />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="rating">
+                <Form.Group className="mb-3" htmlFor="rating">
                     <Form.Label>Рейтинг</Form.Label>
                     <Form.Control type="number" name="rating" min="1" max="10" required />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="releaseDate">
+                <Form.Group className="mb-3" htmlFor="releaseDate">
                     <Form.Label>Дата создания</Form.Label>
                     <Form.Control type="date" name="releaseDate" required />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="director">
+                <Form.Group className="mb-3" htmlFor="director">
                     <Form.Label>Режиссер</Form.Label>
                     <Form.Control type="text" name="director" required />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="image">
+                <Form.Group className="mb-3" htmlFor="image">
                     <Form.Label>Обложка</Form.Label>
                     <Form.Control type="file" name="image" accept="image/*" />
                 </Form.Group>
