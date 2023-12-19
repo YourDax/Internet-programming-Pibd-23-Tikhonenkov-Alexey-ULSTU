@@ -12,9 +12,12 @@ export const cntrls = {
     imagePreview: document.getElementById("image-preview"),
 };
 
+
 export const imagePlaceholder = "https://via.placeholder.com/300x400";
 
 export function createItemsOption(name, value = "", isSelected = false) {
+    var today = new Date().toJSON().split('T')[0];
+    releaseDate.value = today
     const option = document.createElement("option");
     option.value = value || "";
     option.selected = isSelected;

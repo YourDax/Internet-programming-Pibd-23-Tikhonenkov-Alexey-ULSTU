@@ -174,7 +174,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }else if (window.location.pathname.includes("page3.html")) {
         // Запуск функции для page3.html
         loadMoviesBygenre();
-    }else if (window.location.pathname.includes("index.html")) {
+    }else if (window.location.pathname.includes("index.html")||"/") {
         // Запуск функции для index.html
         loadMoviesindex();
     }
