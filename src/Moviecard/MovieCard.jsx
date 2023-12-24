@@ -1,21 +1,21 @@
 import PropTypes from 'prop-types';
 
-const MovieCard = ({ title, description, imageUrl }) => {
+const MovieCard = ({ name, rating, image }) => {
   return (
     <div className="movie-card">
-      <img src={imageUrl || "https://via.placeholder.com/300x400"} alt="Movie Image" />
+      <img src={image || "https://via.placeholder.com/300x400"} alt="Movie Image" />
       <div className="movie-card-content">
-        <h2>{title}</h2>
-        <p>{description}</p>
+        <h2>{name}</h2>
+        <p>Рейтинг: {rating}</p>
       </div>
     </div>
   );
 };
 
 MovieCard.propTypes = {
-    title: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    imageUrl: PropTypes.string,
+    name: PropTypes.string.isRequired,
+    rating: PropTypes.string.isRequired,
+    image: PropTypes.string,
   };
 
 export default MovieCard;

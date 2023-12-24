@@ -45,7 +45,7 @@ const routes = [
     element: <AdminPage />,
   },
   {
-    path: '/page-edit',
+    path: '/page-edit/:id?',
     element: <PageEdit />,
   },
 ];

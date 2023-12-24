@@ -1,59 +1,26 @@
-import MovieCard from '../Moviecard/MovieCard';
+import MovieList from '../Moviecard/MovieList.jsx';
 import Banner from '../components/banner/Banner.jsx';
 
 const MainPage = () => {
-    const movieData = {
-        title: 'Название фильма 1',
-        description: 'Описание фильма 1.',
-        imageUrl: 'https://via.placeholder.com/300x400',
-      };
     return (
         <>
             <Banner />
-            <>
+            <h1>Популярное</h1>
             <div className="movie-container">
-                <h1>Наиболее Популярное</h1>
-                <MovieCard {...movieData} />
-                <MovieCard {...movieData} />
-                <MovieCard {...movieData} />
-                <MovieCard {...movieData} />
-                <MovieCard {...movieData} />
-                <MovieCard {...movieData} />
-                <MovieCard {...movieData} />
-                <MovieCard {...movieData} />
+                    <MovieList />
+            </div>
+            <h1>Может быть интересно</h1>
+            <div className="movie-container">
+                    <MovieList />
             </div>
 
+            <h1>Лучшие отзывы</h1>
             <div className="movie-container">
-                <h1>Может быть интересно</h1>
-                <MovieCard {...movieData} />
-                <MovieCard {...movieData} />
-                <MovieCard {...movieData} />
-                <MovieCard {...movieData} />
-                <MovieCard {...movieData} />
-                <MovieCard {...movieData} />
-                <MovieCard {...movieData} />
-                <MovieCard {...movieData} />
-                <MovieCard {...movieData} />
-                <MovieCard {...movieData} />
-                <MovieCard {...movieData} />
-                <MovieCard {...movieData} />
+                    <MovieList />   
             </div>
-            <div className="movie-container">
-                <h1>Лучшие отзывы</h1>
-                <MovieCard {...movieData} />
-                <MovieCard {...movieData} />
-                <MovieCard {...movieData} />
-                <MovieCard {...movieData} />
-                <MovieCard {...movieData} />
-                <MovieCard {...movieData} />
-                <MovieCard {...movieData} />
-                <MovieCard {...movieData} />
-                <MovieCard {...movieData} />
-                <MovieCard {...movieData} />
-                <MovieCard {...movieData} />
-                <MovieCard {...movieData} />
-            </div>
-            </>
+            
+            
+            
         </>
     );
 };
