@@ -12,6 +12,7 @@ import Page2 from './pages/Page2.jsx';
 import Page3 from './pages/Page3.jsx';
 import Page4 from './pages/Page4.jsx';
 import PageEdit from './pages/PageEdit.jsx';
+import SearchPage from './pages/SearchPage.jsx';
 
 const routes = [
   {
@@ -47,6 +48,11 @@ const routes = [
   {
     path: '/page-edit/:id?',
     element: <PageEdit />,
+  },
+  {
+    path: '/searchPage',
+    element: <SearchPage />,
+    title: 'Поиск',
   },
 ];
 
