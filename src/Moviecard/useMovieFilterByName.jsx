@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import MovieCard from './MovieCard.jsx';
-import Input from '../components/input/Input.jsx'; // Замените на фактический путь
+//import Input from '../components/input/Input.jsx'; // Замените на фактический путь
 import { Button } from 'react-bootstrap';
 
 const useMovieFilter = () => {
@@ -27,18 +27,12 @@ const useMovieFilter = () => {
     };
     return (
         <>
-            <Input
-                name="search"
-                label="Search movies..."
-                value={searchText}
-                onChange={handleSearchChange}
-                type="text"
-                placeholder="Search movies..."
-                onKeyPress={handleKeyPress}
-            />
-            <Button className='col-5 col-lg-2 m-0 ms-2' type='submit' variant='primary' onClick={handleSearch}>
-                Поиск
-            </Button>
+            
+            <div class="input-group mb-3">
+                <input name="search "type="text" value={searchText} onChange={handleSearchChange} className="form-control" placeholder="Введите название фильма" aria-label="Search movies..."  aria-describedby="button-addon2" onKeyUp={handleKeyPress}/>
+                <button class="btn btn-outline-secondary" type="button" id="button-addon2" onClick={handleSearch}>Поиск</button>
+            </div>
+            
             
             <div className="movie-container">
                 {searchResult.map((movie) => (

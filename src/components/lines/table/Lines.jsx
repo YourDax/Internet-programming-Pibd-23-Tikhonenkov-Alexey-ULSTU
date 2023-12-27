@@ -41,6 +41,9 @@ const Lines = () => {
 
     return (
         <>
+            <Button variant='info' onClick={() => showFormModal()}>
+                Добавить товар (диалог)
+            </Button> 
             <Button as={Link} to='/page-edit' variant='success'>
                 Добавить фильм
             </Button>   

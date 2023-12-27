@@ -4,7 +4,7 @@ const SearchPage = () => {
     
     return (
             <>
-            <h1>Категории</h1>
+            <h1>Поиск</h1>
     
             
               <MovieList />
