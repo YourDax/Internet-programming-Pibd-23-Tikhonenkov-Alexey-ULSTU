@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{default}">
+
+<head>
+    <title>Редактировать фильм</title>
+</head>
+
+<body>
+    <main layout:fragment="content">
+        <form action="#" th:action="@{/admin/movies/edit/{id}(id=${movies.id})}" th:object="${movies}" method="post">
+            <div class="mb-3">
+                <label for="id" class="form-label">ID</label>
+                <input type="text" th:value="*{id}" id="id" class="form-control" readonly disabled>
+            </div>
+            <div class="mb-3">
+                <label for="categorieId" class="form-label">Категория</label>
+                <select th:field="*{categorieId}" id="categorieId" class="form-select">
+                    <option th:each="categorie : ${categories}" th:value="${categorie.id}" th:text="${categorie.name}">
+                    </option>
+                </select>
+                <div th:if="${#fields.hasErrors('categorieId')}" th:errors="*{categorieId}" class="invalid-feedback">
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="name" class="form-label">Название</label>
+                <input type="text" th:field="*{name}" id="name" class="form-control">
+                <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="invalid-feedback"></div>
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Описание</label>
+                <textarea th:field="*{description}" id="description" class="form-control"></textarea>
+                <div th:if="${#fields.hasErrors('description')}" th:errors="*{description}" class="invalid-feedback">
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="duration" class="form-label">Длительность</label>
+                <input type="text" th:field="*{duration}" id="duration" class="form-control">
+                <div th:if="${#fields.hasErrors('duration')}" th:errors="*{duration}" class="invalid-feedback"></div>
+            </div>
+            <div class="mb-3">
+                <label for="image" class="form-label">Изображение</label>
+                <input type="text" th:field="*{image}" id="image" class="form-control">
+                <div th:if="${#fields.hasErrors('image')}" th:errors="*{image}" class="invalid-feedback"></div>
+            </div>
+            <div class="mb-3 d-flex flex-row">
+                <button class="btn btn-primary me-2 button-fixed-width" type="submit">Сохранить</button>
+                <a class="btn btn-secondary button-fixed-width" href="/admin/movies">Отмена</a>
+            </div>
+        </form>
+    </main>
+</body>
+
+</html>

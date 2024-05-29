@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{default}">
+
+<head>
+    <title>Личный кабинет</title>
+</head>
+
+<body>
+    <main layout:fragment="content">
+        <ul class="nav nav-pills justify-content-center" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" data-bs-toggle="pill" href="#movies-user">Все фильмы</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="pill" href="#favorites">Избранное</a>
+            </li>
+        </ul>
+
+        <div class="tab-content mt-2">
+            <div class="tab-pane container active" id="movies-user">
+                <th:block th:replace="~{movies-user :: movies (
+                                                    items=${items},
+                                                    totalPages=${totalPages},
+                                                    currentPage=${currentPage})}" />
+            </div>
+            <div class="tab-pane container fade" id="favorites">
+                <div class="row mt-2">
+                    <div class="col-md-4" th:each="movie : ${favoriteMovies}">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="card-body">
+                                <img src="https://via.placeholder.com/100x150" class="card-img-top" alt="...">
+                                <h5 class="card-title" th:text="${movie.name}"></h5>
+                                <form th:action="@{/user-movies/remove-from-favorites}" method="post">
+                                    <input type="hidden" name="movieId" th:value="${movie.id}" />
+                                    <button type="submit" class="btn btn-danger">Убрать из избранного</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+</body>
+
+</html>
